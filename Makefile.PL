@@ -1,7 +1,48 @@
 use ExtUtils::MakeMaker;
 # See lib/ExtUtils/MakeMaker.pm for details of how to influence
 # the contents of the Makefile that is written.
+
+eval {
+    require Text::Metaphone;
+    
+    print <<CHANGE_WARN if $Text::Metaphone::VERSION < 1.00;
+
+WARNING!  I have found a version of Text::Metaphone older than
+1.00 installed here!
+
+NOTE:  There have been API changes between this version and any
+older than version 1.00!  Also, the metaphone algorithm has been
+modified.  Please read the Changes file if you are upgrading from
+a version of Text::Metaphone older than 1.00.
+
+CHANGE_WARN
+};
+
 WriteMakefile(
     'NAME'	=> 'Text::Metaphone',
     'VERSION_FROM' => 'Metaphone.pm', # finds $VERSION
+#    'LIBS'	=> [''],   # e.g., '-lm' 
+#    'DEFINE'	=> '',     # e.g., '-DHAVE_SOMETHING' 
+#    'INC'	=> '',     # e.g., '-I/usr/include/other' 
+    'C'         => ['metaphone.c my_memory.c'],
+    'OBJECT'    => 'metaphone.o my_memory.o Metaphone.o',
+    'dist'      => {COMPRESS => 'gzip -9',
+		    SUFFIX   => '.gz',
+                    DIST_DEFAULT => 'all tardist',
+		   },
+#CCFLAGS => '-Dbool=char -DHAS_BOOL -I/usr/local/include -Wall -pedantic',
+#OPTIMIZE => '-g',
 );
+
+sub MY::postamble {
+'
+metaphone.o: mytypes.h myconsts.h my_memory.o metachar.h metaphone.h metaphone.c
+
+my_memory.o: mytypes.h myconsts.h my_memory.c my_memory.h
+'
+}
+
+
+
+
+

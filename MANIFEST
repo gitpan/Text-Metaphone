@@ -2,4 +2,13 @@ Changes
 MANIFEST
 Makefile.PL
 Metaphone.pm
-README
+Metaphone.xs
+metachar.h
+metaphone.c
+metaphone.h
+my_memory.c
+my_memory.h
+myconsts.h
+mytypes.h
+test.pl
+typemap

@@ -7,3 +7,30 @@ Revision history for Perl extension Text::Metaphone.
 	- First release to CPAN.
 	- Added POD documentation.
 	- MaxPhonemeLen is no longer exported.
+
+Heh, what happened to 1.00?  Never existed, it was supposed to be the gamma
+release of the pure perl version of the module.  Skipped straight to 1.90, 
+alpha XS version.
+
+BTW  The new XS version is about 40x faster than the old perl version. :)
+
+1.90  Mon Jan 4 03:20:00 EST 1999
+	- First working XS
+	- Has memory leak
+	- Fixed Schw bug
+	* Alterations to algorithm:
+		SCHW 	-> X	'Schwern', 'Schwartz'
+		SCH  	-> SK	'School'
+
+1.91  Mon Jan 4 21:00:00 EST 1999
+	- Fixed memory leak
+	- Started POD
+
+1.92  Tue Jan  5 21:44:11 EST 1999
+	* Alterations to API
+		removed Text::Soundex emulation layer
+		removed everything but Metaphone()
+	* Alterations to algorithm:
+		CHR	-> KR	'Christ', 'tchrist'
+	- Finished POD
+	- First CPAN release since 0.02
