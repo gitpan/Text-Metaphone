@@ -1,0 +1,9 @@
+Revision history for Perl extension Text::Metaphone.
+
+0.01  Tue Dec  2 05:15:49 1997
+	- original version; created by h2xs 1.18
+
+0.02  Tue Dec  2 10:18:27 EST 1997
+	- First release to CPAN.
+	- Added POD documentation.
+	- MaxPhonemeLen is no longer exported.
