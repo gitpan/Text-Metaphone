@@ -16,6 +16,16 @@ a version of Text::Metaphone older than 1.00.
 CHANGE_WARN
 
 
+print <<FIX_WARN if($Text::Metaphone::VERSION >= 1.00 && $Text::Metaphone::VERSION <= 1.94);
+
+NOTE: Bugs fixed in this version alter the way Text::Metaphone encodes
+certain words.  If you have stored metaphone encodings using your
+older version of T::M, please re-encode them with this new version.
+Please read the Changes file for details.
+
+FIX_WARN
+
+
 WriteMakefile(
     'NAME'	=> 'Text::Metaphone',
     'VERSION_FROM' => 'Metaphone.pm', # finds $VERSION

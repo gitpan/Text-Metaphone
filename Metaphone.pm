@@ -14,7 +14,7 @@ use integer;
 	     Metaphone
 );
 
-$VERSION = 1.94;
+$VERSION = 1.95;
 
 bootstrap Text::Metaphone $VERSION;
 
@@ -29,6 +29,7 @@ sub Metaphone {
 
 1;
 
+__END__
 =pod
 
 =head1 NAME
@@ -120,7 +121,7 @@ And here's the original Metaphone algorithm as presented in Pick BASIC.
 
 =head1 COPYRIGHT, et al.
 
-Copyright (c) 1997-1998 Michael G Schwern.  All Rights Reserved.
+Copyright (c) 1997-1999 Michael G Schwern.  All Rights Reserved.
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
 

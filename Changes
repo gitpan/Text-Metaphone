@@ -37,11 +37,16 @@ BTW  The new XS version is about 40x faster than the old perl version. :)
 
 
 1.93  Thu Jan 21 21:34:40 EST 1999
-	- Removed empty string asseration.
-	- Fixed "W if followed by a vowel"  (Thanks to Paul Walmsley)
-	- Fixed "Ignore C if SC[IEY]"
-	- Fixed array boundry problems in ENCODE.
+	* Removed empty string asseration.
+	* Fixed "W if followed by a vowel"  (Thanks to Paul Walmsley)
+	* Fixed "Ignore C if SC[IEY]"
+	* Fixed array boundry problems in ENCODE.
 
 
 1.94  Fri Jan 22 15:26:30 EST 1999
 	- Defined NULL for myself.  Fixes bug on SunOS 4.1.x
+
+1.95  Wed Jan 27 15:02:47 EST 1999
+	* Fixed 'CK'->'KK' bug. ('CK' is now 'K')
+	- Added README and INSTALL docs
+	- Moved test.pl to t/metaphone.t

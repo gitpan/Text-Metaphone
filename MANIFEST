@@ -10,5 +10,7 @@ my_memory.c
 my_memory.h
 myconsts.h
 mytypes.h
-test.pl
+t/metaphone.t
+README
+INSTALL
 typemap

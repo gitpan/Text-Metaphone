@@ -8,7 +8,7 @@
 
 use strict;
 my $loaded;
-BEGIN { $| = 1; print "1..1\n"; }
+BEGIN { $| = 1; print "1..19\n"; }
 END {print "not ok 1\n" unless $loaded;}
 use Text::Metaphone;
 $loaded = 1;
@@ -39,6 +39,7 @@ my %test_phones = (
 		   'What'      => 'HT',
 		   'Wierd'     => 'WRT',
 		   ''          => '',
+		   'picklehead'=> 'PKLHT',
 		   );
 
 foreach my $word (keys %test_phones) {

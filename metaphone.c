@@ -280,7 +280,7 @@ flag metaphone (
 			 * else K
 			 */
 			case 'K':
-				if( Prev_Letter == 'C' )
+				if( Prev_Letter != 'C' )
 					Phonize('K');
 				break;
 			/* F if before H
