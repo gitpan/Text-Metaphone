@@ -14,7 +14,7 @@ use integer;
 	     Metaphone
 );
 
-$VERSION = 1.93;
+$VERSION = 1.94;
 
 bootstrap Text::Metaphone $VERSION;
 

@@ -42,3 +42,6 @@ BTW  The new XS version is about 40x faster than the old perl version. :)
 	- Fixed "Ignore C if SC[IEY]"
 	- Fixed array boundry problems in ENCODE.
 
+
+1.94  Fri Jan 22 15:26:30 EST 1999
+	- Defined NULL for myself.  Fixes bug on SunOS 4.1.x

@@ -3,12 +3,10 @@ use ExtUtils::MakeMaker;
 # the contents of the Makefile that is written.
 
 eval {
-    require Text::Metaphone;
-    
-    print <<CHANGE_WARN if $Text::Metaphone::VERSION < 1.00;
+	require Text::Metaphone;
+};
 
-WARNING!  I have found a version of Text::Metaphone older than
-1.00 installed here!
+print <<CHANGE_WARN if $Text::Metaphone::VERSION < 1.00;
 
 NOTE:  There have been API changes between this version and any
 older than version 1.00!  Also, the metaphone algorithm has been
@@ -16,7 +14,7 @@ modified.  Please read the Changes file if you are upgrading from
 a version of Text::Metaphone older than 1.00.
 
 CHANGE_WARN
-};
+
 
 WriteMakefile(
     'NAME'	=> 'Text::Metaphone',

@@ -13,10 +13,20 @@
 #define TRUE 	 	(1 == 1)
 #define FALSE 	 	(!TRUE)
 #endif /* TRUE */
-#define ERROR   	FALSE
-#define SUCCESS		TRUE
-#define FAILURE		FALSE
 
+#ifndef ERROR
+#define ERROR   	FALSE
+#endif
+#ifndef SUCCESS
+#define SUCCESS		TRUE
+#endif
+#ifndef FAILURE
+#define FAILURE		FALSE
+#endif
+
+#ifndef NULL                         
+#define NULL            0                                               
+#endif
 
 /* 	Garbage character for use with memory debugging.  
 	Need to make it OS dependant. */
