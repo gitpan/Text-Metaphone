@@ -34,3 +34,11 @@ BTW  The new XS version is about 40x faster than the old perl version. :)
 		CHR	-> KR	'Christ', 'tchrist'
 	- Finished POD
 	- First CPAN release since 0.02
+
+
+1.93  Thu Jan 21 21:34:40 EST 1999
+	- Removed empty string asseration.
+	- Fixed "W if followed by a vowel"  (Thanks to Paul Walmsley)
+	- Fixed "Ignore C if SC[IEY]"
+	- Fixed array boundry problems in ENCODE.
+

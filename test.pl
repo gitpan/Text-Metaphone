@@ -22,23 +22,28 @@ print "ok 1\n";
 my $t_idx = 2;
 
 my %test_phones = (
-		'recrudescence' => 'RKRTSSNS',
-		'moist' => 'MST',
-		'Gutenberg' => 'KTNBRK',
-		'recridessence' => 'RKRTSNS',
-		'crapulance' => 'KRPLNS',
-		'cough' => 'KF',
-		'coffee' => 'KF',
-		'tchrist' => 'TKRST',
-		'Schwern' => 'XRN',
-		'Schwartz' => 'XRTS',
-		'Avulsion' => 'AFLXN',
-		'Aeon' => 'EN',
-		'Mushrooms' => 'MXRMS'
-		);
+		   'recrudescence' => 'RKRTSNS',
+		   'moist' => 'MST',
+		   'Gutenberg' => 'KTNBRK',
+		   'recridessence' => 'RKRTSNS',
+		   'crapulance' => 'KRPLNS',
+		   'cough' => 'KF',
+		   'coffee' => 'KF',
+		   'tchrist' => 'TKRST',
+		   'Schwern' => 'XWRN',
+		   'Schwartz' => 'XWRTS',
+		   'Avulsion' => 'AFLXN',
+		   'Aeon' => 'EN',
+		   'Mushrooms' => 'MXRMS',
+		   'Way'       => 'W',
+		   'What'      => 'HT',
+		   'Wierd'     => 'WRT',
+		   ''          => '',
+		   );
 
 foreach my $word (keys %test_phones) {
-    print "not " unless Metaphone($word) eq $test_phones{$word};
+    my $phoned = Metaphone($word);
+    print "not ($phoned) " unless $phoned eq $test_phones{$word};
     print "ok ".$t_idx++." $word -> ", $test_phones{$word}, "\n";
 }
 

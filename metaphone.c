@@ -67,8 +67,10 @@ flag metaphone (
 	/* Negative phoneme length is meaningless */
 	assert(max_phonemes >= 0);
 	/* Empty/null string is meaningless */
-	assert(word != NULL && word[0] != '\0');
-
+	/* Overly paranoid */
+	/* assert(word != NULL && word[0] != '\0'); */
+	assert(word != NULL);
+	
 		
 	/*-- Allocate memory for our phoned_phrase --*/
 	if( max_phonemes == 0 ) {  /* Assume largest possible */
@@ -79,6 +81,7 @@ flag metaphone (
 		if(!NewMemory((void **)phoned_word, sizeof(char) * max_phonemes + 1))
 			return ERROR;
 	}
+
 
 	/*-- The first phoneme has to be processed specially. --*/
 	/* Find our first letter */
@@ -112,13 +115,21 @@ flag metaphone (
 				w_idx+=2;
 			}
 			break;
-		/* WH becomes H, WR becomes R */
+		/* WH becomes H, 
+		   WR becomes R 
+		   W if followed by a vowel */
 		case 'W':
 			if( Next_Letter == 'H' ||
-				Next_Letter == 'R' ) {
-				Phonize(Next_Letter);
-				w_idx+=2;
+			    Next_Letter == 'R' ) 
+			{
+			  Phonize(Next_Letter);
+			  w_idx+=2;
 			}
+			else if ( isvowel(Next_Letter) ) {
+			  Phonize('W');
+			  w_idx+=2;
+			}
+			/* else ignore */
 			break;
 		/* X becomes S */
 		case 'X':
@@ -187,8 +198,12 @@ flag metaphone (
 						Next_Letter == 'I' ) { /* CIA */
 						Phonize(SH);
 					}
+					/* SC[IEY] */
+					else if ( Prev_Letter == 'S' ) {
+					  /* Dropped */
+					}
 					else {
-						Phonize('S');
+					  Phonize('S');
 					}
 				}
 				else if ( Next_Letter == 'H' ) {
@@ -299,8 +314,8 @@ flag metaphone (
 				}
 #ifndef USE_TRADITIONAL_METAPHONE
 				else if ( Next_Letter == 'C' &&
-						  Look_Ahead_Letter(2) == 'H' &&
-						  Look_Ahead_Letter(3) == 'W' ) {
+					  Look_Ahead_Letter(2) == 'H' &&
+					  Look_Ahead_Letter(3) == 'W' ) {
 					Phonize(SH);
 					skip_letter += 2;
 				}
@@ -331,9 +346,9 @@ flag metaphone (
 			case 'V':
 				Phonize('F');
 				break;
-			/* W after a vowel, else dropped */
+			/* W before a vowel, else dropped */
 			case 'W':
-				if( isvowel(Prev_Letter) )
+				if( isvowel(Next_Letter) )
 					Phonize('W');
 				break;
 			/* KS */
@@ -341,7 +356,7 @@ flag metaphone (
 				Phonize('K');
 				Phonize('S');
 				break;
-			/* Y unless followed by a vowel */
+			/* Y if followed by a vowel */
 			case 'Y':
 				if( isvowel(Next_Letter) )
 					Phonize('Y');
