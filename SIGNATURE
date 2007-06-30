@@ -1,0 +1,40 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.55.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 d8e64dde81f72dc40188548587017432a4b98efd Changes
+SHA1 2c6f2717e0bdf47ea1f3a3a036f64ae5842ea1f7 INSTALL
+SHA1 095fb2ad7c391516abbb5034912ae0c6052f8f66 MANIFEST
+SHA1 f9cd16c24e6679b0762bbf79f9c39021c0edf778 META.yml
+SHA1 3f8c29d1d3d03354e63f330f45bcfb5433c30ce5 Makefile.PL
+SHA1 7a95f3b9b57dce1e57d8c01f0e03bb4d41cc21ff Metaphone.pm
+SHA1 cf2f4807fbcf4a51c7c7d4f1f6fb5b9e85d0b3de Metaphone.xs
+SHA1 4c1e1cc8cdc5c207922438e7b4180f9c84ab72d0 README
+SHA1 e03647be3a1f7c9987199865b0a5bfdc5fec8f13 metachar.h
+SHA1 0f797a5e421388c63701a2011a2f538bc9646a68 metaphone.h
+SHA1 5c29c1222572b76fc28be7ea60b1f89ccef10f91 metaphone_c.c
+SHA1 f68a7751966c4ae5f4739cac404f70f02cffd1ff my_memory.c
+SHA1 bbcaa209425605869cb18b9589d3584d91fb8660 my_memory.h
+SHA1 51bdd46bc73390531c4613b7c31cf7d89da31ab9 myconsts.h
+SHA1 eead33a2948c2f5b9e2228f49a3e17ff7632d5d9 mytypes.h
+SHA1 d2f2286983cf67f1c9945d1047196dd66a5c2a05 t/metaphone.t
+SHA1 f467e923a8d3e5eca87a465dfa4dd50d682afb86 typemap
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.7 (Darwin)
+
+iD8DBQFGhf3XWMohlhD1QycRAtGpAKDaGPfOuquxGZqxHLlMGOcbce+ZfQCfR/M0
+dlKgnSFnyNjjGV9XBSuKPKs=
+=T/kF
+-----END PGP SIGNATURE-----
