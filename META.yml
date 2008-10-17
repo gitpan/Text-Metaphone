@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Text-Metaphone
-version:            2.01
+version:            20081017
 abstract:           A modern soundex.  Phonetic encoding of words.
 author:
     - Michael G Schwern <schwern@pobox.com>
